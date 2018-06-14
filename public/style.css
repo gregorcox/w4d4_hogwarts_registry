@@ -6,3 +6,7 @@
 .mini-block{
   border: solid 2px rgb(212, 51, 0);
 }
+
+img{
+  max-width: 10%;
+}

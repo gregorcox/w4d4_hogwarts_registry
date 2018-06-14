@@ -43,8 +43,12 @@ def self.find( id )
   result = House.new( house.first )
   return result
 end
+
 def self.delete_all()
   sql = "DELETE FROM houses;"
   SqlRunner.run(sql)
 end
+
+
+
 end
