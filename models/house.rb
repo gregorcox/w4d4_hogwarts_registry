@@ -1,40 +1,32 @@
 require_relative('../db/sqlrunner.rb')
 
 
-class Student
+class House
 
-attr_reader :first_name, :last_name, :house, :age, :id
+attr_reader :house_name, :id
 
 
 def initialize (information)
   @id = information['id'].to_i
-  @first_name = information['first_name']
-  @last_name = information['last_name']
-  @house = information['house'].to_i
-  @age = information['age'].to_i
-end
+  @house_name = information['house_name']
+  @logo_url = information['logo_url']
 
-
-def name()
-  return "#{@first_name} #{@last_name}"
 end
 
 def save()
-  sql = "INSERT INTO students
+  sql = "INSERT INTO houses
   (
-    first_name,
-    last_name,
-    house,
-    age
+    house_name,
+    logo_url
   )
   VALUES
   (
-    $1, $2, $3, $4
+    $1, $2
   )
   RETURNING *"
-  values = [@first_name, @last_name, @house, @age]
-  student_data = SqlRunner.run(sql, values)
-  @id = student_data.first()['id'].to_i
+  values = [@house_name, @logo_url]
+  house_data = SqlRunner.run(sql, values)
+  @id = house_data.first()['id'].to_i
 end
 
 def delete()

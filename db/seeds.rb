@@ -3,6 +3,10 @@ require_relative('../models/student.rb')
 
 Student.delete_all()
 
+house1= 
+
+
+
 
 student1 = Student.new({
   "first_name" => "Harry",
