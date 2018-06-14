@@ -1,8 +1,8 @@
-require( ‘sinatra’ )
-require( ‘sinatra/contrib/all’ )
-require( ‘pry’ )
-require_relative( ‘./models/student.rb’ )
-also_reload( ‘./models/*’ )
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
+require_relative ('./models/student.rb')
+also_reload('./models/*')
 
 #INDEX
 
@@ -11,7 +11,11 @@ get '/students' do
   erb(:index)
 end
 
-
+#SHOW
+get '/students/:id' do
+  @student = Student.find(params[:id].to_i)
+  erb( :show )
+end
 
 
 
