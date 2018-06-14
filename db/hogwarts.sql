@@ -15,6 +15,6 @@ CREATE TABLE students(
   id serial4 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  house INT4 REFERENCES houses(id) ON DELETE CASCADE,
+  house_id INT4 REFERENCES houses(id) ON DELETE CASCADE,
   age INT2
 );

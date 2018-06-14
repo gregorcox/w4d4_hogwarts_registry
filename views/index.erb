@@ -5,7 +5,7 @@
 <% for student in @students %>
   <p>Name: <%= student.name %> </p>
   <p>Age: <%= student.age %> </p>
-  <p>House: <%= student.house %> </p>
+  <p>House: <%= student.house_id %> </p>
   <p> <a href="/students/<%=student.id%>"> Show Student</a> </p>
   <form method="post" action="/students/<%=student.id%>/delete">
     <input type="submit" value="Expel Student" />

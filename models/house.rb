@@ -3,7 +3,7 @@ require_relative('../db/sqlrunner.rb')
 
 class House
 
-attr_reader :house_name, :id
+attr_reader :house_name, :logo_url, :id
 
 
 def initialize (information)
@@ -43,5 +43,8 @@ def self.find( id )
   result = House.new( house.first )
   return result
 end
-
+def self.delete_all()
+  sql = "DELETE FROM houses;"
+  SqlRunner.run(sql)
+end
 end
