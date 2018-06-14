@@ -37,6 +37,13 @@ def save()
   @id = student_data.first()['id'].to_i
 end
 
+def delete()
+  sql = "DELETE FROM students
+  WHERE id = $1"
+  values = [@id]
+  SqlRunner.run( sql, values )
+end
+
 def self.all()
   sql = "SELECT * FROM students"
   students = SqlRunner.run( sql )

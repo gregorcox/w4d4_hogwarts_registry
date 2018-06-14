@@ -34,7 +34,12 @@ post '/students' do
 end
 
 
-
+#delete
+post '/students/:id/delete' do
+  @student = Student.find(params[:id].to_i)
+  @student.delete()
+  redirect to '/students'
+end
 
 
 
