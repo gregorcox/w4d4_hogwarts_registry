@@ -1,0 +1,8 @@
+.student-block{
+  background: linear-gradient(-45deg, tomato, rgb(252, 233, 59));
+  border: solid 1px mediumaquamarine;
+}
+
+.mini-block{
+  border: solid 2px rgb(212, 51, 0);
+}

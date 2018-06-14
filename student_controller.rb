@@ -27,7 +27,7 @@ end
 
 
 #CREATE
-post '/students/' do
+post '/students' do
   @student = Student.new(params)
   @student.save()
   erb( :create )
