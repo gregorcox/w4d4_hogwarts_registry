@@ -12,7 +12,6 @@ def initialize (information)
   @last_name = information['last_name']
   @house = information['house']
   @age = information['age'].to_i
-
 end
 
 
