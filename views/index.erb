@@ -1,11 +1,11 @@
-<p>Hogwarts Proudly Presents</p>
+<h1>Hogwarts Proudly Presents</h1>
 
 <div class="student-block">
 
 <% for student in @students %>
-  <p>Name: <%= student.name %> </p>
-  <p>House: <%= student.house().house_name %></p>
-  <p>Age: <%= student.age %></p>
+  <p><strong>Name:</strong> <%= student.name %> </p>
+  <p><strong>House:</strong> <%= student.house().house_name %></p>
+  <p><strong>Age:</strong> <%= student.age %></p>
   <img src="<%= student.house().logo_url %>" alt= "House Logo">
 
   <p> <a href="/students/<%=student.id%>"> Show Student</a> </p>
